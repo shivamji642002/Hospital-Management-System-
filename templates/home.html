@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center">
+
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Welcome to Hospital Management</h1>
+
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <a href="{% url 'doctor:doctor_home' %}" class="w-full">
+                    <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+                        Doctor 🩺
+                    </button>
+                </a>
+                <a href="{% url 'patient:patient_home' %}" class="w-full">
+                    <button class="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+                        Patient 🧑‍⚕️
+                    </button>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

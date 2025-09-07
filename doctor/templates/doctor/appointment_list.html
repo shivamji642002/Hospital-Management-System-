@@ -1,0 +1,29 @@
+<h1>Appointment Requests</h1>
+<table border="1">
+<tr>
+    <th>Patient</th>
+    <th>Date</th>
+    <th>Reason</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+{% for app in appointments %}
+<tr>
+    <td>{{ app.patient.name }}</td>
+    <td>{{ app.date }}</td>
+    <td>{{ app.reason }}</td>
+    <td>{% if app.doctor_approved %} Approved {% else %} Pending {% endif %}</td>
+    <td>
+        {% if not app.doctor_approved %}
+            <a href="{% url 'patient:approve_appointment' app.id %}">Approve</a>
+        {% else %}
+            ✔️
+        {% endif %}
+    </td>
+</tr>
+{% empty %}
+<tr>
+    <td colspan="5">No appointments yet.</td>
+</tr>
+{% endfor %}
+</table>
